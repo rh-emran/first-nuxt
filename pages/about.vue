@@ -1,16 +1,10 @@
 <template>
-  <h2>About</h2>
-  <NuxtLink to="/">Back to home</NuxtLink>
-  <div v-if="pending">Loading ...</div>
-  <div v-else>
-    <ul>
-      <li v-for="user in users3" :key="user.id">{{ user.name }}</li>
-    </ul>
+  <div>
+    <h1>About page</h1>
+    <NuxtLink to="/">Home page</NuxtLink>
   </div>
 </template>
 
-<script setup>
-const { pending, data: users3 } = useLazyFetch(
-  "https://jsonplaceholder.typicode.com/users"
-);
+<script setup lang="ts">
+definePageMeta({ pageTransition: { name: "rotate" } });
 </script>
